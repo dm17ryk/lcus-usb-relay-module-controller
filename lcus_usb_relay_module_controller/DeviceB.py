@@ -1,0 +1,104 @@
+# Copyright JSN, 2026 <jsn-usb2serial@pebble.plus.com>
+
+from .DeviceBase import DeviceBase
+import time
+
+class DeviceB(DeviceBase):
+	"""
+	Supported devices:
+	:: SAMIROB, SAMIORE ROBOT
+	"""
+	CLOSE = 0
+	OPEN = 1
+	CLOSE_WITH_FEEDBACK = 2
+	OPEN_WITH_FEEDBACK = 3
+	INVERT = 4
+	CHECK = 5
+
+	def __init__(self, port):
+		super().__init__(port)
+		self._count = None
+
+	# @property
+	# def relay_count(self) -> int:
+	# 	if self._count == None:
+	# 		self.query_status() # updates self._count
+	# 	return self._count
+	# TODO: moved to base class. Cleanup.
+
+	def _get_feedback(self, id: int):
+		"""
+		This function queries a device and validates the response.
+
+		params:
+			id	Channel ID. This value should be passed in so we can verify the
+				correct channel was returned, and also update our internals.
+
+		return value:
+			0 = closed, 1 = open
+		"""
+		time.sleep(self._delay) # Wait for relay to finish activating.
+		data = self._port.read(4)
+		starting_id = data[0] # expected value is 0xA0
+		ch_number = data[1]   # channel + 1		# channel number (base 1)
+		if ch_number != id:
+			raise Exception('Unexpected channel number returned.')
+		state = data[2]       # Expect 0 or 1
+		checksum = data[3]
+		if checksum != self._checksum(starting_id, ch_number, state):
+			raise Exception('Incorrect checksum.')
+		self._relay_state[id] = state # May as well update our internals here
+		return state
+
+	def open_with_feedback(self, id: int) -> int:
+		"""
+		Opens a relay and verifies the response.
+
+		Parameters:
+			id	Channel ID
+
+		Return value:
+			1 (open)
+		"""
+		print('open with feedback') #-
+		self._send_command(id, self.OPEN_WITH_FEEDBACK)
+		time.sleep(self._delay) # Wait for relay to activate
+		return self._get_feedback(id)
+
+	def close_with_feedback(self, id: int) -> int:
+		"""
+		Closes a relay and verifies the response.
+
+		Parameters:
+			id	Channel ID
+
+		Return value:
+			1 (open)
+		"""
+		print('close with feedback') #-
+		self._send_command(id, self.CLOSE_WITH_FEEDBACK)
+		time.sleep(self._delay) # Wait for relay to activate
+		return self._get_feedback(id) # or, return self._relay_state[id]
+
+	def invert(self, id, verify=False):
+		self._send_command(id, self.INVERT)
+		state = self._get_feedback(id)
+		if verify == True:
+			expected_state = self._relay_state[id] & 0x01 ^ 0x01
+			if state != expected_state:
+				raise Exception('The invert command failed.')
+		return state
+		# TODO: deviceA invert - does it need to return a value?
+
+	def check(self, id: int) -> int:
+		self._send_command(id, self.CHECK)
+		return self._get_feedback(id)
+
+	def query_status(self) -> list[int]:
+		self._port.reset_input_buffer()
+		self._port.write([0xFF])
+		self._port.flush()
+		time.sleep(self._delay) # Might not work without this small delay.
+		self._count = self._port.readinto(self._relay_state)
+		return self._relay_state[:self._count]
+	

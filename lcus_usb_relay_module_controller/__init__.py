@@ -15,70 +15,14 @@
 # Instructions for installing and using the module can be found here on GitHub:
 # https://github.com/Pebble94464/lcus-usb-relay-module-controller
 
-import time
+from .DeviceA import DeviceA
+from .DeviceB import DeviceB
+from .LegacyDevice import Device as LegacyDevice
 
-class _ChannelArray(bytearray):
-	"""
-	Each element in the ChannelArray represents the on/off status of a relay.
-	0 = closed, 1 = open.
+Device = DeviceA  # Default to the new implementation.
 
-	Setting an item in the array automatically updates the corresponding relay.
-	"""
-	def __init__(self, device, count):
-		self._device = device
-		super().__init__(count)
+# To select the orignal or different implmentation in your code, simply use...
+# from lcus_usb_relay_module_controller import LegacyDevice as Device
+# TODO: move to documentation.
 
-	def __setitem__(self, key, value, update_relay=True):
-		"""Set self[key] to value, and also update its relay."""
-		if update_relay:
-			self._device._set_relay(key, value)
-		super().__setitem__(key, value)
-
-class Device:
-	"""
-	This class represents the USB relay board.
-	"""
-	def __init__(self, port):
-		self._delay_seconds = 0.01	# Small delay introduced to fix reliability.
-		self._port = port
-		self.channel = None
-		self.query_relay_status()
-
-	def _set_relay(self, key, value):
-		starting_id = 0xA0  		# default value is 0xA0
-		ch_number = key + 1			# channel number (base 1)
-		state = int(value > 0)		# 0 = closed, 1 = open
-		checksum = starting_id + ch_number + state % 0xFF
-		self._port.write([starting_id, ch_number, state, checksum, 0x0d, 0xa])
-		time.sleep(self._delay_seconds)
-
-	def query_relay_status(self):
-		"""
-		Query the status of relays on the device, and update our internal
-		channel array.
-
-		Note the device natively uses base 1 for its channel numbering,
-		whereas our channel array is using base 0.
-
-		Returns the device's native response as a list of byte arrays.
-		"""
-		self._port.write([0xff,0x0d,0xa])
-		time.sleep(self._delay_seconds)
-		lines = []
-		while True:
-			bytes = self._port.readline()
-			if(len(bytes) == 0):
-				break
-			lines.append(bytes.strip())
-
-		relay_count = len(lines)  # We assume there's one line for every relay.
-
-		if self.channel == None:
-			self.channel = _ChannelArray(self, relay_count)
-
-		for i in range(0, relay_count):
-			self.channel.__setitem__(i, lines[i].find(b'OFF') < 0, False)
-
-		return lines
-
-__all__ = ['Device']
+__all__ = ['Device', 'DeviceA', 'DeviceB', 'LegacyDevice']
