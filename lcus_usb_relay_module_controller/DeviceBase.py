@@ -4,7 +4,13 @@ import serial
 import time
 
 class DeviceBase:
-	"""hello earthling"""
+	"""A base class for USB relay devices.
+	
+	Don't instantiate this class directly. To support a specific device, derive
+	a new class from it and implement the check() and query_status() methods,
+	etc. See DeviceA and DeviceB for examples of how to do this.
+	"""
+
 	CLOSE = 0
 	OPEN = 1
 
@@ -15,7 +21,7 @@ class DeviceBase:
 		self._relay_state = [0] * 8
 		"""Used internally to keep track of relay states."""
 
-		self._delay = 0.2 # Seconds
+		self._delay = 0.1 # Seconds
 		"""A minimal delay to allow time for relay activations, etc."""
 
 		self.channel = self
@@ -47,7 +53,6 @@ class DeviceBase:
 			self.query_status() # updates self._count
 		return self._count
 
-
 	def __len__(self) -> int:
 		# Required for legacy support. Example code used 'relay_count = len(device.channel)'
 		return self.relay_count
@@ -59,10 +64,10 @@ class DeviceBase:
 		starting_id = 0xA0  		# default value is 0xA0
 		ch_number = channel + 1		# channel number (base 1)
 		checksum = self._checksum(starting_id, ch_number, op_code)
-		# self._port.write([starting_id, ch_number, op_code, checksum, 0x0D, 0x0A])
-		self._port.write([starting_id, ch_number, op_code, checksum]) # TODO: test this works without sending a new line char.
+		self._port.write([starting_id, ch_number, op_code, checksum])
+		time.sleep(self._delay)
 		self._port.flush()
-		# Note our internal array is updated inside the open / close functions, not here.
+		# Our internal array is updated inside the open / close functions, not here.
 
 	def open(self, id, verify=False) -> None:
 		"""Open a relay.
@@ -124,6 +129,15 @@ class DeviceBase:
 		pass
 
 	def invert(self, id, verify=False) -> int:
-		"""Open a closed relay, or close an opened relay."""
-		pass
+		"""Open a closed relay, or close an opened relay.
+		
+		Params:
 
+			id (int):
+				The relay channel number (base 0).
+
+			verify (bool):			
+				Setting this to True will trigger an exception if the relay 
+				fails to change as expected.		
+		"""
+		pass

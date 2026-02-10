@@ -1,12 +1,11 @@
-# Copyright JSN, 2026 <jsn-usb2serial@pebble.plus.com>
-
 from .DeviceBase import DeviceBase
 import time
 
 class DeviceB(DeviceBase):
 	"""
 	Supported devices:
-	:: SAMIROB, SAMIORE ROBOT
+
+	   SAMIROB, SAMIORE ROBOT
 	"""
 	CLOSE = 0
 	OPEN = 1
@@ -18,13 +17,6 @@ class DeviceB(DeviceBase):
 	def __init__(self, port):
 		super().__init__(port)
 		self._count = None
-
-	# @property
-	# def relay_count(self) -> int:
-	# 	if self._count == None:
-	# 		self.query_status() # updates self._count
-	# 	return self._count
-	# TODO: moved to base class. Cleanup.
 
 	def _get_feedback(self, id: int):
 		"""
@@ -88,7 +80,6 @@ class DeviceB(DeviceBase):
 			if state != expected_state:
 				raise Exception('The invert command failed.')
 		return state
-		# TODO: deviceA invert - does it need to return a value?
 
 	def check(self, id: int) -> int:
 		self._send_command(id, self.CHECK)
@@ -97,8 +88,8 @@ class DeviceB(DeviceBase):
 	def query_status(self) -> list[int]:
 		self._port.reset_input_buffer()
 		self._port.write([0xFF])
-		self._port.flush()
 		time.sleep(self._delay) # Might not work without this small delay.
+		self._port.flush()
 		self._count = self._port.readinto(self._relay_state)
 		return self._relay_state[:self._count]
 	

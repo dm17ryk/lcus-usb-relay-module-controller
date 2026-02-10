@@ -1,7 +1,7 @@
 import pytest
 import serial
 from lcus_usb_relay_module_controller import DeviceA
-from main.test.device_tests import DeviceTests
+from device_tests import DeviceTests
 
 DEVICE = DeviceA
 
