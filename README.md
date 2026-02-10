@@ -26,7 +26,7 @@ This module can be installed by downloading the project from GitHub.
 Open a command prompt, navigate to the folder containing setup.py,
 and type `pip install .` and then press enter.
 
-To verify the module has been installed type `lcus-usb-relay-module-controller`
+To verify the module has been installed type `pip show lcus-usb-relay-module-controller`
 
 To unintall the module type `pip uninstall lcus-usb-relay-module-controller`
 
@@ -61,8 +61,8 @@ try:
 		print('The first relay is open.')
 
 	# Alternatively we can set and get relay states using the indexer...
-	device[1] = 1		# Open the first relay (same as device.open(0))
-	if device[1] == 1:  # Check if the relay is open (same as device.check(0))
+	device[1] = 1		# Open the second relay (same as device.open(1))
+	if device[1] == 1:  # Check if the relay is open (same as device.check(1))
 		print('The second relay is open.')
 
 	# Query the status of all relays...
