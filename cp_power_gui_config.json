@@ -1,0 +1,10 @@
+{
+  "relay_control_port": "COM5",
+  "baudrate": 9600,
+  "power_relay_channel": 1,
+  "usb_relay_channel": 2,
+  "invert_power": false,
+  "invert_usb": false,
+  "power_to_usb_delay_s": 1.0,
+  "inter_command_delay_s": 0.05
+}
