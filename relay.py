@@ -1,4 +1,6 @@
+import argparse
 import json
+import sys
 import threading
 import time
 from dataclasses import dataclass, asdict
@@ -13,7 +15,8 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 
 
-CONFIG_PATH = Path("cp_power_gui_config.json")
+CONFIG_DIR = Path.home() / ".cp_relay_ui"
+CONFIG_PATH = CONFIG_DIR / "cp_power_gui_config.json"
 
 
 @dataclass
@@ -32,6 +35,13 @@ class AppConfig:
     # Sequencing
     power_to_usb_delay_s: float = 1.0
     inter_command_delay_s: float = 0.05  # 50ms is commonly recommended
+
+
+def ensure_config_file_exists() -> None:
+    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
+    if not CONFIG_PATH.exists():
+        default_cfg = AppConfig()
+        CONFIG_PATH.write_text(json.dumps(asdict(default_cfg), indent=2), encoding="utf-8")
 
 
 class LcusRelayBoard:
@@ -201,16 +211,20 @@ class ControlPanelSequencer:
 
 
 def load_config() -> AppConfig:
+    ensure_config_file_exists()
     if CONFIG_PATH.exists():
         try:
             data = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
             return AppConfig(**data)
         except Exception:
             pass
-    return AppConfig()
+    default_cfg = AppConfig()
+    save_config(default_cfg)
+    return default_cfg
 
 
 def save_config(cfg: AppConfig) -> None:
+    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
     CONFIG_PATH.write_text(json.dumps(asdict(cfg), indent=2), encoding="utf-8")
 
 
@@ -251,11 +265,13 @@ class App(tk.Tk):
         self.btn_off = ttk.Button(btns, text="OFF", command=lambda: self._run_sequence("off"))
         self.btn_reset = ttk.Button(btns, text="RESET", command=lambda: self._run_sequence("reset"))
         self.btn_cfg = ttk.Button(btns, text="Config…", command=self._open_config_dialog)
+        self.btn_help = ttk.Button(btns, text="Help", command=self._show_help)
 
         self.btn_on.grid(row=0, column=0, padx=4, pady=4, sticky="ew")
         self.btn_off.grid(row=0, column=1, padx=4, pady=4, sticky="ew")
         self.btn_reset.grid(row=0, column=2, padx=4, pady=4, sticky="ew")
         self.btn_cfg.grid(row=0, column=3, padx=4, pady=4, sticky="ew")
+        self.btn_help.grid(row=0, column=4, padx=4, pady=4, sticky="ew")
 
         status = ttk.LabelFrame(main, text="Status", padding=10)
         status.grid(row=1, column=0, sticky="ew", pady=(10, 0))
@@ -291,7 +307,7 @@ class App(tk.Tk):
 
     def _set_buttons_enabled(self, enabled: bool):
         state = "normal" if enabled else "disabled"
-        for b in (self.btn_on, self.btn_off, self.btn_reset, self.btn_cfg):
+        for b in (self.btn_on, self.btn_off, self.btn_reset, self.btn_cfg, self.btn_help):
             b.config(state=state)
 
     def _run_sequence(self, which: str):
@@ -420,6 +436,23 @@ class App(tk.Tk):
         ttk.Button(btn_row, text="Cancel", command=dlg.destroy).grid(row=0, column=0, padx=6)
         ttk.Button(btn_row, text="Save", command=on_save).grid(row=0, column=1)
 
+    def _show_help(self):
+        message = (
+            "CP Power Sequencer Help\n\n"
+            "GUI actions:\n"
+            "- ON: Power on, then enable USB after configured delay.\n"
+            "- OFF: Disable power and USB.\n"
+            "- RESET: Power cycle, then re-enable USB.\n\n"
+            "Configuration:\n"
+            f"- Config file: {CONFIG_PATH}\n"
+            "- Use 'Config…' to set COM port, channel mapping, and delays.\n\n"
+            "Command-line mode:\n"
+            "- python relay.py --action ON\n"
+            "- python relay.py --action OFF\n"
+            "- python relay.py --action RESET"
+        )
+        messagebox.showinfo("Help", message, parent=self)
+
     def _on_close(self):
         try:
             self.board.close()
@@ -428,5 +461,56 @@ class App(tk.Tk):
         self.destroy()
 
 
-if __name__ == "__main__":
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="CP Relay Controller", add_help=True)
+    parser.add_argument(
+        "-a",
+        "--action",
+        type=str.upper,
+        choices=("ON", "OFF", "RESET"),
+        help="Run headless action (no GUI), then exit.",
+    )
+    return parser.parse_args()
+
+
+def run_headless_action(action: str) -> int:
+    cfg = load_config()
+    board = LcusRelayBoard(cfg.relay_control_port, cfg.baudrate, timeout_s=1.0)
+    seq = ControlPanelSequencer(board, cfg)
+
+    try:
+        board.open()
+        if action == "ON":
+            seq.sequence_on()
+        elif action == "OFF":
+            seq.sequence_off()
+        elif action == "RESET":
+            seq.sequence_reset()
+        else:
+            raise ValueError(f"Unknown action {action!r}")
+        print(f"Action {action} completed on {cfg.relay_control_port}.")
+        return 0
+    except Exception as e:
+        print(f"Failed to run action {action}: {e!r}", file=sys.stderr)
+        return 1
+    finally:
+        try:
+            board.close()
+        except Exception:
+            pass
+
+
+def main() -> int:
+    args = parse_args()
+    if args.action:
+        return run_headless_action(args.action)
+    # if args.help:
+    #     args.print_help()
+    #     return 0
+
     App().mainloop()
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

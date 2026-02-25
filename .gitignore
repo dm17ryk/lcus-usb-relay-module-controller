@@ -3,5 +3,6 @@ lcus_usb_relay_module_controller/__pycache__/
 lcus_usb_relay_module_controller.egg-info/
 relay.build/
 relay.dist/
+__pycache__/
 *.exe
 
