@@ -259,19 +259,31 @@ class App(tk.Tk):
 
         btns = ttk.Frame(main)
         btns.grid(row=0, column=0, sticky="ew")
-        btns.columnconfigure(0, weight=1)
+        for col in range(6):
+            btns.columnconfigure(col, weight=1)
 
         self.btn_on = ttk.Button(btns, text="ON", command=lambda: self._run_sequence("on"))
         self.btn_off = ttk.Button(btns, text="OFF", command=lambda: self._run_sequence("off"))
         self.btn_reset = ttk.Button(btns, text="RESET", command=lambda: self._run_sequence("reset"))
         self.btn_cfg = ttk.Button(btns, text="Config…", command=self._open_config_dialog)
         self.btn_help = ttk.Button(btns, text="Help", command=self._show_help)
+        self.btn_power_on = ttk.Button(btns, text="Power ON", command=lambda: self._run_direct_action("power", True))
+        self.btn_power_off = ttk.Button(btns, text="Power OFF", command=lambda: self._run_direct_action("power", False))
+        self.btn_usb_on = ttk.Button(btns, text="USB ON", command=lambda: self._run_direct_action("usb", True))
+        self.btn_usb_off = ttk.Button(btns, text="USB OFF", command=lambda: self._run_direct_action("usb", False))
 
         self.btn_on.grid(row=0, column=0, padx=4, pady=4, sticky="ew")
         self.btn_off.grid(row=0, column=1, padx=4, pady=4, sticky="ew")
         self.btn_reset.grid(row=0, column=2, padx=4, pady=4, sticky="ew")
         self.btn_cfg.grid(row=0, column=3, padx=4, pady=4, sticky="ew")
         self.btn_help.grid(row=0, column=4, padx=4, pady=4, sticky="ew")
+
+        ttk.Label(btns, text="Power").grid(row=1, column=0, padx=4, pady=(8, 4), sticky="e")
+        self.btn_power_on.grid(row=1, column=1, padx=4, pady=(8, 4), sticky="ew")
+        self.btn_power_off.grid(row=1, column=2, padx=4, pady=(8, 4), sticky="ew")
+        ttk.Label(btns, text="USB-Serial").grid(row=1, column=3, padx=4, pady=(8, 4), sticky="e")
+        self.btn_usb_on.grid(row=1, column=4, padx=4, pady=(8, 4), sticky="ew")
+        self.btn_usb_off.grid(row=1, column=5, padx=4, pady=(8, 4), sticky="ew")
 
         status = ttk.LabelFrame(main, text="Status", padding=10)
         status.grid(row=1, column=0, sticky="ew", pady=(10, 0))
@@ -307,7 +319,17 @@ class App(tk.Tk):
 
     def _set_buttons_enabled(self, enabled: bool):
         state = "normal" if enabled else "disabled"
-        for b in (self.btn_on, self.btn_off, self.btn_reset, self.btn_cfg, self.btn_help):
+        for b in (
+            self.btn_on,
+            self.btn_off,
+            self.btn_reset,
+            self.btn_cfg,
+            self.btn_help,
+            self.btn_power_on,
+            self.btn_power_off,
+            self.btn_usb_on,
+            self.btn_usb_off,
+        ):
             b.config(state=state)
 
     def _run_sequence(self, which: str):
@@ -326,6 +348,26 @@ class App(tk.Tk):
                     raise ValueError(f"Unknown sequence {which!r}")
 
                 self.worker_q.put(("ok", which))
+            except Exception as e:
+                self.worker_q.put(("err", repr(e)))
+
+        self._set_buttons_enabled(False)
+        threading.Thread(target=worker, daemon=True).start()
+
+    def _run_direct_action(self, target: str, on: bool):
+        def worker():
+            try:
+                if not self.board.is_open:
+                    self.board.open()
+
+                if target == "power":
+                    self.seq.set_power(on)
+                elif target == "usb":
+                    self.seq.set_usb(on)
+                else:
+                    raise ValueError(f"Unknown direct action target {target!r}")
+
+                self.worker_q.put(("ok", f"{target}_{'on' if on else 'off'}"))
             except Exception as e:
                 self.worker_q.put(("err", repr(e)))
 
@@ -514,3 +556,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
