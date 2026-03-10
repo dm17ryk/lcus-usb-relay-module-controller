@@ -486,14 +486,19 @@ class App(tk.Tk):
             "GUI actions:\n"
             "- ON: Power on, then enable USB after configured delay.\n"
             "- OFF: Disable power and USB.\n"
-            "- RESET: Power cycle, then re-enable USB.\n\n"
+            "- RESET: Power cycle, then re-enable USB.\n"
+            "- Power ON/OFF and USB ON/OFF buttons control each relay directly.\n\n"
             "Configuration:\n"
             f"- Config file: {CONFIG_PATH}\n"
             "- Use 'Config…' to set COM port, channel mapping, and delays.\n\n"
             "Command-line mode:\n"
-            "- python relay.py --action ON\n"
-            "- python relay.py --action OFF\n"
-            "- python relay.py --action RESET"
+            "- python relay.py --cp ON\n"
+            "- python relay.py --cp OFF\n"
+            "- python relay.py --cp RESET\n"
+            "- python relay.py --power ON\n"
+            "- python relay.py --power OFF\n"
+            "- python relay.py --serial ON\n"
+            "- python relay.py --serial OFF"
         )
         messagebox.showinfo("Help", message, parent=self)
 
@@ -508,34 +513,62 @@ class App(tk.Tk):
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="CP Relay Controller", add_help=True)
     parser.add_argument(
-        "-a",
-        "--action",
+        "--cp",
+        dest="cp_action",
         type=str.upper,
         choices=("ON", "OFF", "RESET"),
-        help="Run headless action (no GUI), then exit.",
+        help="Run CP power sequence headless, then exit.",
+    )
+    parser.add_argument(
+        "--power",
+        dest="power_action",
+        type=str.upper,
+        choices=("ON", "OFF"),
+        help="Set the power relay headless, then exit.",
+    )
+    parser.add_argument(
+        "--serial",
+        dest="serial_action",
+        type=str.upper,
+        choices=("ON", "OFF"),
+        help="Set the USB-serial relay headless, then exit.",
     )
     return parser.parse_args()
 
 
-def run_headless_action(action: str) -> int:
+def run_headless_actions(args: argparse.Namespace) -> int:
     cfg = load_config()
     board = LcusRelayBoard(cfg.relay_control_port, cfg.baudrate, timeout_s=1.0)
     seq = ControlPanelSequencer(board, cfg)
 
     try:
         board.open()
-        if action == "ON":
+
+        if args.cp_action == "ON":
             seq.sequence_on()
-        elif action == "OFF":
+        elif args.cp_action == "OFF":
             seq.sequence_off()
-        elif action == "RESET":
+        elif args.cp_action == "RESET":
             seq.sequence_reset()
-        else:
-            raise ValueError(f"Unknown action {action!r}")
-        print(f"Action {action} completed on {cfg.relay_control_port}.")
+
+        if args.power_action is not None:
+            seq.set_power(args.power_action == "ON")
+
+        if args.serial_action is not None:
+            seq.set_usb(args.serial_action == "ON")
+
+        actions = []
+        if args.cp_action:
+            actions.append(f"cp={args.cp_action}")
+        if args.power_action:
+            actions.append(f"power={args.power_action}")
+        if args.serial_action:
+            actions.append(f"serial={args.serial_action}")
+
+        print(f"Completed {'; '.join(actions)} on {cfg.relay_control_port}.")
         return 0
     except Exception as e:
-        print(f"Failed to run action {action}: {e!r}", file=sys.stderr)
+        print(f"Failed to run requested action(s): {e!r}", file=sys.stderr)
         return 1
     finally:
         try:
@@ -546,11 +579,8 @@ def run_headless_action(action: str) -> int:
 
 def main() -> int:
     args = parse_args()
-    if args.action:
-        return run_headless_action(args.action)
-    # if args.help:
-    #     args.print_help()
-    #     return 0
+    if args.cp_action or args.power_action or args.serial_action:
+        return run_headless_actions(args)
 
     App().mainloop()
     return 0
@@ -558,4 +588,5 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
 
