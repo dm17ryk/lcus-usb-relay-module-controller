@@ -259,7 +259,7 @@ class App(tk.Tk):
 
         btns = ttk.Frame(main)
         btns.grid(row=0, column=0, sticky="ew")
-        for col in range(6):
+        for col in range(9):
             btns.columnconfigure(col, weight=1)
 
         self.btn_on = ttk.Button(btns, text="ON", command=lambda: self._run_sequence("on"))
@@ -272,21 +272,23 @@ class App(tk.Tk):
         self.btn_usb_on = ttk.Button(btns, text="USB ON", command=lambda: self._run_direct_action("usb", True))
         self.btn_usb_off = ttk.Button(btns, text="USB OFF", command=lambda: self._run_direct_action("usb", False))
 
-        self.btn_on.grid(row=0, column=0, padx=4, pady=4, sticky="ew")
-        self.btn_off.grid(row=0, column=1, padx=4, pady=4, sticky="ew")
-        self.btn_reset.grid(row=0, column=2, padx=4, pady=4, sticky="ew")
-        self.btn_cfg.grid(row=0, column=3, padx=4, pady=4, sticky="ew")
-        self.btn_help.grid(row=0, column=4, padx=4, pady=4, sticky="ew")
+        ttk.Label(btns, text="CP").grid(row=0, column=0, padx=4, pady=(8, 4), sticky="e")
+        self.btn_cfg.grid(row=0, column=1, padx=4, pady=4, sticky="ew")
+        self.btn_help.grid(row=0, column=2, padx=4, pady=4, sticky="ew")
 
-        ttk.Label(btns, text="Power").grid(row=1, column=0, padx=4, pady=(8, 4), sticky="e")
-        self.btn_power_on.grid(row=1, column=1, padx=4, pady=(8, 4), sticky="ew")
-        self.btn_power_off.grid(row=1, column=2, padx=4, pady=(8, 4), sticky="ew")
-        ttk.Label(btns, text="USB-Serial").grid(row=1, column=3, padx=4, pady=(8, 4), sticky="e")
-        self.btn_usb_on.grid(row=1, column=4, padx=4, pady=(8, 4), sticky="ew")
-        self.btn_usb_off.grid(row=1, column=5, padx=4, pady=(8, 4), sticky="ew")
+        self.btn_on.grid(row=1, column=0, padx=4, pady=4, sticky="ew")
+        self.btn_off.grid(row=1, column=1, padx=4, pady=4, sticky="ew")
+        self.btn_reset.grid(row=1, column=2, padx=4, pady=4, sticky="ew")
+
+        ttk.Label(btns, text="Power").grid(row=2, column=0, padx=4, pady=(8, 4), sticky="e")
+        self.btn_power_on.grid(row=2, column=1, padx=4, pady=(8, 4), sticky="ew")
+        self.btn_power_off.grid(row=2, column=2, padx=4, pady=(8, 4), sticky="ew")
+        ttk.Label(btns, text="USB-Serial").grid(row=3, column=0, padx=4, pady=(8, 4), sticky="e")
+        self.btn_usb_on.grid(row=3, column=1, padx=4, pady=(8, 4), sticky="ew")
+        self.btn_usb_off.grid(row=3, column=2, padx=4, pady=(8, 4), sticky="ew")
 
         status = ttk.LabelFrame(main, text="Status", padding=10)
-        status.grid(row=1, column=0, sticky="ew", pady=(10, 0))
+        status.grid(row=3, column=0, sticky="ew", pady=(10, 0))
 
         self.var_port = tk.StringVar()
         self.var_port_open = tk.StringVar()
