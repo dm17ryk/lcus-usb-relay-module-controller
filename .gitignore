@@ -5,4 +5,4 @@ relay.build/
 relay.dist/
 __pycache__/
 *.exe
-
+*.lnk

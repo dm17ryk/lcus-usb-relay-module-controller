@@ -1,0 +1,431 @@
+[
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "serial",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "serial",
+        "description": "serial",
+        "detail": "serial",
+        "documentation": {}
+    },
+    {
+        "label": "Device",
+        "importPath": "lcus_usb_relay_module_controller",
+        "description": "lcus_usb_relay_module_controller",
+        "isExtraImport": true,
+        "detail": "lcus_usb_relay_module_controller",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "asdict",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Queue",
+        "importPath": "queue",
+        "description": "queue",
+        "isExtraImport": true,
+        "detail": "queue",
+        "documentation": {}
+    },
+    {
+        "label": "Empty",
+        "importPath": "queue",
+        "description": "queue",
+        "isExtraImport": true,
+        "detail": "queue",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "serial.tools.list_ports",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "serial.tools.list_ports",
+        "description": "serial.tools.list_ports",
+        "detail": "serial.tools.list_ports",
+        "documentation": {}
+    },
+    {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "ttk",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "messagebox",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "exit_code",
+        "kind": 5,
+        "importPath": "relay.build.scons-debug",
+        "description": "relay.build.scons-debug",
+        "peekOfCode": "exit_code = subprocess.call(\n    ['c:\\\\users\\\\dmitrykokotov\\\\.pyenv\\\\pyenv-win\\\\versions\\\\3.13.12\\\\python.exe', '-W', 'ignore', 'C:\\\\Users\\\\DMITRY~1\\\\PYENV~1\\\\PYENV-~1\\\\versions\\\\313~1.12\\\\Lib\\\\SITE-P~1\\\\nuitka\\\\build\\\\INLINE~1\\\\bin\\\\scons.py', '--quiet', '-f', 'C:\\\\Users\\\\DMITRY~1\\\\PYENV~1\\\\PYENV-~1\\\\versions\\\\313~1.12\\\\Lib\\\\SITE-P~1\\\\nuitka\\\\build\\\\BACKEN~1.SCO', '--jobs', '12', '--warn=no-deprecated', '--no-site-dir', 'nuitka_src=C:\\\\Users\\\\DMITRY~1\\\\PYENV~1\\\\PYENV-~1\\\\versions\\\\313~1.12\\\\Lib\\\\SITE-P~1\\\\nuitka\\\\build', 'python_version=3.13', 'python_prefix=C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\versions\\\\3.13.12', 'experimental=', 'debug_modes=', 'deployment=false', 'no_deployment=', 'gil_mode=true', 'console_mode=disable', 'noelf_mode=true', 'target_arch=x86_64', 'module_mode=false', 'dll_mode=true', 'exe_mode=false', 'standalone_mode=true', 'onefile_mode=true', 'onefile_temp_mode=true', 'source_dir=.', 'monolithpy=false', 'debug_mode=false', 'debugger_mode=false', 'python_debug=false', 'full_compat=false', 'trace_mode=false', 'file_reference_mode=runtime', 'compiled_module_count=10', 'result_exe=D:\\\\Essence_SC\\\\lsrc\\\\lcus-usb-relay-module-controller\\\\relay.dist\\\\relay.dll', 'frozen_modules=152', 'python_sysflag_no_site=true'],\n    env={'ADF_PATH': 'C:\\\\Espressif\\\\frameworks\\\\esp-adf-v2.7','ALLUSERSPROFILE': 'C:\\\\ProgramData','APPDATA': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Roaming','BOOST_ROOT': 'D:\\\\Essence_SC\\\\3party\\\\boost_1_90_0','CHOCOLATEYINSTALL': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\UniGetUI\\\\Chocolatey','CLINK_DIR': 'C:\\\\Program Files (x86)\\\\clink','COLUMNS': '188','COMMONPROGRAMFILES': 'C:\\\\Program Files\\\\Common Files','COMMONPROGRAMFILES(X86)': 'C:\\\\Program Files (x86)\\\\Common Files','COMMONPROGRAMW6432': 'C:\\\\Program Files\\\\Common Files','COMPUTERNAME': 'ES-DMITRYKO-LT','COMSPEC': 'C:\\\\WINDOWS\\\\system32\\\\cmd.exe','DRIVERDATA': 'C:\\\\WINDOWS\\\\System32\\\\Drivers\\\\DriverData','GOPATH': 'C:\\\\Users\\\\DmitryKokotov\\\\go','HOMEDRIVE': 'C:','HOMEPATH': '\\\\Users\\\\DmitryKokotov','IDF_PATH': 'C:\\\\Espressif\\\\frameworks\\\\esp-idf-v5.5.1','IDF_TOOLS_PATH': 'C:\\\\Espressif','JABRA_NATIVE_BLUETOOTH': 'true','JAVA_HOME': 'C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-21.0.10.7-hotspot\\\\','KEIL_HOME': 'C:\\\\Keil_v5','LIBJABRA_TRACE_LEVEL': 'INFO','LINES': '46','LOCALAPPDATA': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local','LOGONSERVER': '\\\\\\\\ES-DMITRYKO-LT','NIDAQMXSWITCHDIR': 'C:\\\\Program Files (x86)\\\\National Instruments\\\\NI-DAQ\\\\Switch\\\\','NUMBER_OF_PROCESSORS': '12','NVM_HOME': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\nvm','NVM_SYMLINK': 'C:\\\\nvm4w\\\\nodejs','ONEDRIVE': 'C:\\\\Users\\\\DmitryKokotov\\\\OneDrive - Essence Security','ONEDRIVECOMMERCIAL': 'C:\\\\Users\\\\DmitryKokotov\\\\OneDrive - Essence Security','ONEDRIVECONSUMER': 'C:\\\\Users\\\\DmitryKokotov\\\\OneDrive','OS': 'Windows_NT','PATH': 'c:\\\\users\\\\dmitrykokotov\\\\.pyenv\\\\pyenv-win\\\\versions\\\\3.13.12;C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-21.0.10.7-hotspot\\\\bin;C:\\\\Program Files\\\\CMake\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links;C:\\\\Ruby34-x64\\\\bin;C:\\\\Program Files\\\\OpenSSH\\\\;C:\\\\Program Files\\\\TortoiseGit\\\\bin;C:\\\\Program Files\\\\nicels\\\\bin;C:\\\\WINDOWS\\\\system32;C:\\\\WINDOWS;C:\\\\WINDOWS\\\\System32\\\\Wbem;C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\WINDOWS\\\\System32\\\\OpenSSH\\\\;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\nvm;C:\\\\nvm4w\\\\nodejs;C:\\\\Program Files\\\\Microsoft SQL Server\\\\150\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\170\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Windows Performance Toolkit\\\\;C:\\\\Program Files\\\\NVIDIA Corporation\\\\NVIDIA App\\\\NvDLISR;C:\\\\Program Files (x86)\\\\NVIDIA Corporation\\\\PhysX\\\\Common;C:\\\\Program Files\\\\Go\\\\bin;C:\\\\Program Files\\\\Neovim\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\bin;C:\\\\Program Files\\\\PuTTY\\\\;C:\\\\Program Files\\\\LLVM\\\\bin;C:\\\\Program Files\\\\CMake\\\\bin;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Program Files (x86)\\\\GnuWin32\\\\bin;C:\\\\msys64\\\\mingw64\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.local\\\\bin;C:\\\\Strawberry\\\\c\\\\bin;C:\\\\Strawberry\\\\perl\\\\site\\\\bin;C:\\\\Strawberry\\\\perl\\\\bin;C:\\\\Program Files\\\\TortoiseGit\\\\bin;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files\\\\CMake\\\\bin;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Program Files\\\\Neovim\\\\bin;C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Windows Performance Toolkit\\\\;C:\\\\Program Files\\\\GitHub CLI\\\\;C:\\\\Program Files\\\\Go\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\Scripts\\\\;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\;C:\\\\Users\\\\DmitryKokotov\\\\scoop\\\\shims;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\oh-my-posh\\\\bin\\\\;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\oh-my-posh\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.local\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.cargo\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\shims;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\Scripts\\\\;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\;C:\\\\Users\\\\DmitryKokotov\\\\scoop\\\\shims;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\UniGetUI\\\\Chocolatey\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Microsoft VS Code\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\GitHubDesktop\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.dotnet\\\\tools;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\PowerToys\\\\DSCModules\\\\;C:\\\\Users\\\\DmitryKokotov\\\\go\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links;C:\\\\nvm4w\\\\nodejs;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\nvm;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Microsoft VS Code\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\PowerToys\\\\DSCModules\\\\;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\GitHubDesktop\\\\bin','PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW','POSHCOLORTHEME': 'Default','POSH_CURSOR_LINE': '46','POSH_INSTALLER': 'ws','POSH_SESSION_ID': '52e219f1-1cb7-442c-9792-185cde4c495b','POSH_SHELL': 'cmd','POSH_SHELL_VERSION': 'clink v1.9.17.36e2ca','POSH_THEME': '','POSH_THEMES_PATH': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\oh-my-posh\\\\themes\\\\','PROCESSOR_ARCHITECTURE': 'AMD64','PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 165 Stepping 2, GenuineIntel','PROCESSOR_LEVEL': '6','PROCESSOR_REVISION': 'a502','PROGRAMDATA': 'C:\\\\ProgramData','PROGRAMFILES': 'C:\\\\Program Files','PROGRAMFILES(X86)': 'C:\\\\Program Files (x86)','PROGRAMW6432': 'C:\\\\Program Files','PROMPT': 'C\\x08L\\x08I\\x08N\\x08K\\x08 \\x08$P$G','PSMODULEPATH': 'C:\\\\Program Files\\\\WindowsPowerShell\\\\Modules;C:\\\\WINDOWS\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\Modules','PUBLIC': 'C:\\\\Users\\\\Public','PYENV': 'C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\','PYENV_HOME': 'C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\','PYENV_ROOT': 'C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\','PYENV_VIRTUALENV_DISABLE_PROMPT': '1','PYTHONHASHSEED': '0','SESSIONNAME': 'Console','SYSTEMDRIVE': 'C:','SYSTEMROOT': 'C:\\\\WINDOWS','TEMP': 'C:\\\\Users\\\\DMITRY~1\\\\AppData\\\\Local\\\\Temp','TMP': 'C:\\\\Users\\\\DMITRY~1\\\\AppData\\\\Local\\\\Temp','USERDOMAIN': 'AzureAD','USERDOMAIN_ROAMINGPROFILE': 'AzureAD','USERNAME': 'DmitryKokotov','USERPROFILE': 'C:\\\\Users\\\\DmitryKokotov','VIRTUAL_ENV_DISABLE_PROMPT': '1','VS140COMNTOOLS': 'C:\\\\Program Files (x86)\\\\Microsoft Visual Studio 14.0\\\\Common7\\\\Tools\\\\','WINDIR': 'C:\\\\WINDOWS','WT_PROFILE_ID': '{0caa0dad-35be-5f56-a8ff-afceeeaa6101}','WT_SESSION': '33662df0-f5ba-4e5f-aecb-055a92ff4eb4','ZES_ENABLE_SYSMAN': '1','NUITKA_PYTHON_EXE_PATH': 'c:\\\\users\\\\dmitrykokotov\\\\.pyenv\\\\pyenv-win\\\\versions\\\\3.13.12\\\\python.exe','NUITKA_PACKAGE_DIR': 'C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\versions\\\\3.13.12\\\\Lib\\\\site-packages\\\\nuitka','NUITKA_CACHE_DIR_DOWNLOADS': 'C:\\\\Users\\\\DMITRY~1\\\\AppData\\\\Local\\\\Nuitka\\\\Nuitka\\\\Cache\\\\DOWNLO~1','SCONS_CACHE_MSVC_CONFIG': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Nuitka\\\\Nuitka\\\\Cache\\\\scons-msvc-config','_NUITKA_ONEFILE_CHILD_GRACE_TIME_INT': '5000','_NUITKA_BUILD_DEFINITIONS_CATALOG': '_NUITKA_ONEFILE_CHILD_GRACE_TIME_INT,_NUITKA_BUILD_DEFINITIONS_CATALOG','NUITKA_QUIET': '0'},\n    shell=False\n)",
+        "detail": "relay.build.scons-debug",
+        "documentation": {}
+    },
+    {
+        "label": "exit_code",
+        "kind": 5,
+        "importPath": "relay.onefile-build.scons-debug",
+        "description": "relay.onefile-build.scons-debug",
+        "peekOfCode": "exit_code = subprocess.call(\n    ['c:\\\\users\\\\dmitrykokotov\\\\.pyenv\\\\pyenv-win\\\\versions\\\\3.13.12\\\\python.exe', '-W', 'ignore', 'C:\\\\Users\\\\DMITRY~1\\\\PYENV~1\\\\PYENV-~1\\\\versions\\\\313~1.12\\\\Lib\\\\SITE-P~1\\\\nuitka\\\\build\\\\INLINE~1\\\\bin\\\\scons.py', '--quiet', '-f', 'C:\\\\Users\\\\DMITRY~1\\\\PYENV~1\\\\PYENV-~1\\\\versions\\\\313~1.12\\\\Lib\\\\SITE-P~1\\\\nuitka\\\\build\\\\ONEFIL~1.SCO', '--jobs', '12', '--warn=no-deprecated', '--no-site-dir', 'nuitka_src=C:\\\\Users\\\\DMITRY~1\\\\PYENV~1\\\\PYENV-~1\\\\versions\\\\313~1.12\\\\Lib\\\\SITE-P~1\\\\nuitka\\\\build', 'python_version=3.13', 'python_prefix=C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\versions\\\\3.13.12', 'experimental=', 'debug_modes=', 'deployment=false', 'no_deployment=', 'gil_mode=true', 'console_mode=disable', 'noelf_mode=true', 'target_arch=x86_64', 'module_mode=false', 'dll_mode=true', 'exe_mode=false', 'standalone_mode=true', 'onefile_mode=true', 'onefile_temp_mode=true', 'result_exe=D:\\\\Essence_SC\\\\lsrc\\\\lcus-usb-relay-module-controller\\\\relay.exe', 'source_dir=.', 'debug_mode=false', 'trace_mode=false', 'onefile_splash_screen=false', 'onefile_windows_static_runtime=true'],\n    env={'ADF_PATH': 'C:\\\\Espressif\\\\frameworks\\\\esp-adf-v2.7','ALLUSERSPROFILE': 'C:\\\\ProgramData','APPDATA': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Roaming','BOOST_ROOT': 'D:\\\\Essence_SC\\\\3party\\\\boost_1_90_0','CHOCOLATEYINSTALL': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\UniGetUI\\\\Chocolatey','CLINK_DIR': 'C:\\\\Program Files (x86)\\\\clink','COLUMNS': '188','COMMONPROGRAMFILES': 'C:\\\\Program Files\\\\Common Files','COMMONPROGRAMFILES(X86)': 'C:\\\\Program Files (x86)\\\\Common Files','COMMONPROGRAMW6432': 'C:\\\\Program Files\\\\Common Files','COMPUTERNAME': 'ES-DMITRYKO-LT','COMSPEC': 'C:\\\\WINDOWS\\\\system32\\\\cmd.exe','DRIVERDATA': 'C:\\\\WINDOWS\\\\System32\\\\Drivers\\\\DriverData','GOPATH': 'C:\\\\Users\\\\DmitryKokotov\\\\go','HOMEDRIVE': 'C:','HOMEPATH': '\\\\Users\\\\DmitryKokotov','IDF_PATH': 'C:\\\\Espressif\\\\frameworks\\\\esp-idf-v5.5.1','IDF_TOOLS_PATH': 'C:\\\\Espressif','JABRA_NATIVE_BLUETOOTH': 'true','JAVA_HOME': 'C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-21.0.10.7-hotspot\\\\','KEIL_HOME': 'C:\\\\Keil_v5','LIBJABRA_TRACE_LEVEL': 'INFO','LINES': '46','LOCALAPPDATA': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local','LOGONSERVER': '\\\\\\\\ES-DMITRYKO-LT','NIDAQMXSWITCHDIR': 'C:\\\\Program Files (x86)\\\\National Instruments\\\\NI-DAQ\\\\Switch\\\\','NUMBER_OF_PROCESSORS': '12','NVM_HOME': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\nvm','NVM_SYMLINK': 'C:\\\\nvm4w\\\\nodejs','ONEDRIVE': 'C:\\\\Users\\\\DmitryKokotov\\\\OneDrive - Essence Security','ONEDRIVECOMMERCIAL': 'C:\\\\Users\\\\DmitryKokotov\\\\OneDrive - Essence Security','ONEDRIVECONSUMER': 'C:\\\\Users\\\\DmitryKokotov\\\\OneDrive','OS': 'Windows_NT','PATH': 'c:\\\\users\\\\dmitrykokotov\\\\.pyenv\\\\pyenv-win\\\\versions\\\\3.13.12;C:\\\\Program Files\\\\Eclipse Adoptium\\\\jdk-21.0.10.7-hotspot\\\\bin;C:\\\\Program Files\\\\CMake\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links;C:\\\\Ruby34-x64\\\\bin;C:\\\\Program Files\\\\OpenSSH\\\\;C:\\\\Program Files\\\\TortoiseGit\\\\bin;C:\\\\Program Files\\\\nicels\\\\bin;C:\\\\WINDOWS\\\\system32;C:\\\\WINDOWS;C:\\\\WINDOWS\\\\System32\\\\Wbem;C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\;C:\\\\WINDOWS\\\\System32\\\\OpenSSH\\\\;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\nvm;C:\\\\nvm4w\\\\nodejs;C:\\\\Program Files\\\\Microsoft SQL Server\\\\150\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\Microsoft SQL Server\\\\Client SDK\\\\ODBC\\\\170\\\\Tools\\\\Binn\\\\;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Windows Performance Toolkit\\\\;C:\\\\Program Files\\\\NVIDIA Corporation\\\\NVIDIA App\\\\NvDLISR;C:\\\\Program Files (x86)\\\\NVIDIA Corporation\\\\PhysX\\\\Common;C:\\\\Program Files\\\\Go\\\\bin;C:\\\\Program Files\\\\Neovim\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\bin;C:\\\\Program Files\\\\PuTTY\\\\;C:\\\\Program Files\\\\LLVM\\\\bin;C:\\\\Program Files\\\\CMake\\\\bin;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Program Files (x86)\\\\GnuWin32\\\\bin;C:\\\\msys64\\\\mingw64\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.local\\\\bin;C:\\\\Strawberry\\\\c\\\\bin;C:\\\\Strawberry\\\\perl\\\\site\\\\bin;C:\\\\Strawberry\\\\perl\\\\bin;C:\\\\Program Files\\\\TortoiseGit\\\\bin;C:\\\\Program Files\\\\dotnet\\\\;C:\\\\Program Files\\\\CMake\\\\bin;C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Program Files\\\\Neovim\\\\bin;C:\\\\Program Files (x86)\\\\Windows Kits\\\\10\\\\Windows Performance Toolkit\\\\;C:\\\\Program Files\\\\GitHub CLI\\\\;C:\\\\Program Files\\\\Go\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\Scripts\\\\;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\;C:\\\\Users\\\\DmitryKokotov\\\\scoop\\\\shims;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\oh-my-posh\\\\bin\\\\;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\oh-my-posh\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.local\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.cargo\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\shims;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\Scripts\\\\;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python314\\\\;C:\\\\Users\\\\DmitryKokotov\\\\scoop\\\\shims;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\UniGetUI\\\\Chocolatey\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Microsoft\\\\WindowsApps;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Microsoft VS Code\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\GitHubDesktop\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\.dotnet\\\\tools;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\PowerToys\\\\DSCModules\\\\;C:\\\\Users\\\\DmitryKokotov\\\\go\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links;C:\\\\nvm4w\\\\nodejs;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\nvm;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\Microsoft VS Code\\\\bin;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\PowerToys\\\\DSCModules\\\\;C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\GitHubDesktop\\\\bin','PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW','POSHCOLORTHEME': 'Default','POSH_CURSOR_LINE': '46','POSH_INSTALLER': 'ws','POSH_SESSION_ID': '52e219f1-1cb7-442c-9792-185cde4c495b','POSH_SHELL': 'cmd','POSH_SHELL_VERSION': 'clink v1.9.17.36e2ca','POSH_THEME': '','POSH_THEMES_PATH': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Programs\\\\oh-my-posh\\\\themes\\\\','PROCESSOR_ARCHITECTURE': 'AMD64','PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 165 Stepping 2, GenuineIntel','PROCESSOR_LEVEL': '6','PROCESSOR_REVISION': 'a502','PROGRAMDATA': 'C:\\\\ProgramData','PROGRAMFILES': 'C:\\\\Program Files','PROGRAMFILES(X86)': 'C:\\\\Program Files (x86)','PROGRAMW6432': 'C:\\\\Program Files','PROMPT': 'C\\x08L\\x08I\\x08N\\x08K\\x08 \\x08$P$G','PSMODULEPATH': 'C:\\\\Program Files\\\\WindowsPowerShell\\\\Modules;C:\\\\WINDOWS\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\Modules','PUBLIC': 'C:\\\\Users\\\\Public','PYENV': 'C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\','PYENV_HOME': 'C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\','PYENV_ROOT': 'C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\','PYENV_VIRTUALENV_DISABLE_PROMPT': '1','PYTHONHASHSEED': '0','SESSIONNAME': 'Console','SYSTEMDRIVE': 'C:','SYSTEMROOT': 'C:\\\\WINDOWS','TEMP': 'C:\\\\Users\\\\DMITRY~1\\\\AppData\\\\Local\\\\Temp','TMP': 'C:\\\\Users\\\\DMITRY~1\\\\AppData\\\\Local\\\\Temp','USERDOMAIN': 'AzureAD','USERDOMAIN_ROAMINGPROFILE': 'AzureAD','USERNAME': 'DmitryKokotov','USERPROFILE': 'C:\\\\Users\\\\DmitryKokotov','VIRTUAL_ENV_DISABLE_PROMPT': '1','VS140COMNTOOLS': 'C:\\\\Program Files (x86)\\\\Microsoft Visual Studio 14.0\\\\Common7\\\\Tools\\\\','WINDIR': 'C:\\\\WINDOWS','WT_PROFILE_ID': '{0caa0dad-35be-5f56-a8ff-afceeeaa6101}','WT_SESSION': '33662df0-f5ba-4e5f-aecb-055a92ff4eb4','ZES_ENABLE_SYSMAN': '1','NUITKA_CACHE_DIR_DOWNLOADS': 'C:\\\\Users\\\\DMITRY~1\\\\AppData\\\\Local\\\\Nuitka\\\\Nuitka\\\\Cache\\\\DOWNLO~1','SCONS_CACHE_MSVC_CONFIG': 'C:\\\\Users\\\\DmitryKokotov\\\\AppData\\\\Local\\\\Nuitka\\\\Nuitka\\\\Cache\\\\scons-msvc-config','NUITKA_PYTHON_EXE_PATH': 'c:\\\\users\\\\dmitrykokotov\\\\.pyenv\\\\pyenv-win\\\\versions\\\\3.13.12\\\\python.exe','NUITKA_PACKAGE_DIR': 'C:\\\\Users\\\\DmitryKokotov\\\\.pyenv\\\\pyenv-win\\\\versions\\\\3.13.12\\\\Lib\\\\site-packages\\\\nuitka','_NUITKA_ONEFILE_CHILD_GRACE_TIME_INT': '5000','_NUITKA_ONEFILE_TEMP_SPEC': '{TEMP}\\\\onefile_{PID}_{TIME}','_NUITKA_ONEFILE_COMPRESSION_BOOL': '1','_NUITKA_ONEFILE_ARCHIVE_BOOL': '0','_NUITKA_BUILD_DEFINITIONS_CATALOG': '_NUITKA_ONEFILE_CHILD_GRACE_TIME_INT,_NUITKA_ONEFILE_TEMP_SPEC,_NUITKA_ONEFILE_COMPRESSION_BOOL,_NUITKA_ONEFILE_ARCHIVE_BOOL,_NUITKA_BUILD_DEFINITIONS_CATALOG','NUITKA_QUIET': '0'},\n    shell=False\n)",
+        "detail": "relay.onefile-build.scons-debug",
+        "documentation": {}
+    },
+    {
+        "label": "\tport",
+        "kind": 5,
+        "importPath": "example",
+        "description": "example",
+        "peekOfCode": "\tport = serial.Serial(\n\t\tport='COM3',\t\t# Which port is yours on? Update as needed.\n\t\tbaudrate=9600,\n\t\tbytesize=8,\n\t\ttimeout=2,\n\t\tstopbits=serial.STOPBITS_ONE,\n\t\tparity=serial.PARITY_NONE,\n\t)\n\t# Create an instance of Device and associate it with the port...\n\tdevice = Device(port)",
+        "detail": "example",
+        "documentation": {}
+    },
+    {
+        "label": "\tdevice",
+        "kind": 5,
+        "importPath": "example",
+        "description": "example",
+        "peekOfCode": "\tdevice = Device(port)\n\t# Open the first relay...\n\tdevice.channel[0] = 1\n\t# Query the device's relay status directly...\n\t#   Note that channel numbers reported by the device are base 1.\n\tlines = device.query_relay_status()\n\tfor l in lines:\n\t\tprint(l.decode('ascii'))\n\t# Alternatively we can read values from the device.channel array...\n\tif device.channel[0] == 1:",
+        "detail": "example",
+        "documentation": {}
+    },
+    {
+        "label": "\tdevice.channel[0]",
+        "kind": 5,
+        "importPath": "example",
+        "description": "example",
+        "peekOfCode": "\tdevice.channel[0] = 1\n\t# Query the device's relay status directly...\n\t#   Note that channel numbers reported by the device are base 1.\n\tlines = device.query_relay_status()\n\tfor l in lines:\n\t\tprint(l.decode('ascii'))\n\t# Alternatively we can read values from the device.channel array...\n\tif device.channel[0] == 1:\n\t\tprint('The first relay is open.')\n\t# Close all relays...",
+        "detail": "example",
+        "documentation": {}
+    },
+    {
+        "label": "\tlines",
+        "kind": 5,
+        "importPath": "example",
+        "description": "example",
+        "peekOfCode": "\tlines = device.query_relay_status()\n\tfor l in lines:\n\t\tprint(l.decode('ascii'))\n\t# Alternatively we can read values from the device.channel array...\n\tif device.channel[0] == 1:\n\t\tprint('The first relay is open.')\n\t# Close all relays...\n\trelay_count = len(device.channel)\n\tfor i in range(0, relay_count):\n\t\tdevice.channel[i] = 0",
+        "detail": "example",
+        "documentation": {}
+    },
+    {
+        "label": "\trelay_count",
+        "kind": 5,
+        "importPath": "example",
+        "description": "example",
+        "peekOfCode": "\trelay_count = len(device.channel)\n\tfor i in range(0, relay_count):\n\t\tdevice.channel[i] = 0\nexcept Exception as err:\n\tprint('repr', repr(err))\nfinally:\n\tif(port.is_open == True):\n\t\tport.flush()\n\t\tport.close()",
+        "detail": "example",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tdevice.channel[i]",
+        "kind": 5,
+        "importPath": "example",
+        "description": "example",
+        "peekOfCode": "\t\tdevice.channel[i] = 0\nexcept Exception as err:\n\tprint('repr', repr(err))\nfinally:\n\tif(port.is_open == True):\n\t\tport.flush()\n\t\tport.close()",
+        "detail": "example",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "kind": 6,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "class AppConfig:\n    relay_control_port: str = \"COM5\"\n    baudrate: int = 9600\n    # Map physical relay channels (1-based, per LCUS manuals) to functions\n    power_relay_channel: int = 1\n    usb_relay_channel: int = 2\n    # If wired via NC instead of NO, logical meaning may invert\n    invert_power: bool = False\n    invert_usb: bool = False\n    # Sequencing",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "LcusRelayBoard",
+        "kind": 6,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "class LcusRelayBoard:\n    \"\"\"\n    Minimal LCUS USB-serial relay controller.\n    Protocol (commonly documented):\n      - Set relay: [0xA0, channel, op, checksum] where checksum = sum of first 3 bytes (mod 256)\n      - Query: 0xFF\n    \"\"\"\n    def __init__(self, port_name: str, baudrate: int = 9600, timeout_s: float = 1.0):\n        self.port_name = port_name\n        self.baudrate = baudrate",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "ControlPanelSequencer",
+        "kind": 6,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "class ControlPanelSequencer:\n    def __init__(self, board: LcusRelayBoard, cfg: AppConfig):\n        self.board = board\n        self.cfg = cfg\n        self._seq_lock = threading.Lock()\n    def _logical_to_physical(self, logical_on: bool, invert: bool) -> bool:\n        # If invert=True, relay \"ON\" means logical \"OFF\" (NC wiring, etc.)\n        return logical_on ^ invert\n    def set_power(self, on: bool) -> None:\n        self.board.set_relay(",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "App",
+        "kind": 6,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "class App(tk.Tk):\n    def __init__(self):\n        super().__init__()\n        self.title(\"CP Power Sequencer (LCUS-2)\")\n        icon = tk.PhotoImage(file=\"reviews_4142441.png\")  # PNG\n        self.iconphoto(True, icon)            # True => apply to all future toplevels too\n        self.cfg = load_config()\n        self.board = LcusRelayBoard(self.cfg.relay_control_port, self.cfg.baudrate, timeout_s=1.0)\n        self.seq = ControlPanelSequencer(self.board, self.cfg)\n        self.worker_q: Queue = Queue()",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "ensure_config_file_exists",
+        "kind": 2,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "def ensure_config_file_exists() -> None:\n    CONFIG_DIR.mkdir(parents=True, exist_ok=True)\n    if not CONFIG_PATH.exists():\n        default_cfg = AppConfig()\n        CONFIG_PATH.write_text(json.dumps(asdict(default_cfg), indent=2), encoding=\"utf-8\")\nclass LcusRelayBoard:\n    \"\"\"\n    Minimal LCUS USB-serial relay controller.\n    Protocol (commonly documented):\n      - Set relay: [0xA0, channel, op, checksum] where checksum = sum of first 3 bytes (mod 256)",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "load_config",
+        "kind": 2,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "def load_config() -> AppConfig:\n    ensure_config_file_exists()\n    if CONFIG_PATH.exists():\n        try:\n            data = json.loads(CONFIG_PATH.read_text(encoding=\"utf-8\"))\n            return AppConfig(**data)\n        except Exception:\n            pass\n    default_cfg = AppConfig()\n    save_config(default_cfg)",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "save_config",
+        "kind": 2,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "def save_config(cfg: AppConfig) -> None:\n    CONFIG_DIR.mkdir(parents=True, exist_ok=True)\n    CONFIG_PATH.write_text(json.dumps(asdict(cfg), indent=2), encoding=\"utf-8\")\nclass App(tk.Tk):\n    def __init__(self):\n        super().__init__()\n        self.title(\"CP Power Sequencer (LCUS-2)\")\n        icon = tk.PhotoImage(file=\"reviews_4142441.png\")  # PNG\n        self.iconphoto(True, icon)            # True => apply to all future toplevels too\n        self.cfg = load_config()",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "parse_args",
+        "kind": 2,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "def parse_args() -> argparse.Namespace:\n    parser = argparse.ArgumentParser(description=\"CP Relay Controller\", add_help=True)\n    parser.add_argument(\n        \"-a\",\n        \"--action\",\n        type=str.upper,\n        choices=(\"ON\", \"OFF\", \"RESET\"),\n        help=\"Run headless action (no GUI), then exit.\",\n    )\n    return parser.parse_args()",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "run_headless_action",
+        "kind": 2,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "def run_headless_action(action: str) -> int:\n    cfg = load_config()\n    board = LcusRelayBoard(cfg.relay_control_port, cfg.baudrate, timeout_s=1.0)\n    seq = ControlPanelSequencer(board, cfg)\n    try:\n        board.open()\n        if action == \"ON\":\n            seq.sequence_on()\n        elif action == \"OFF\":\n            seq.sequence_off()",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "def main() -> int:\n    args = parse_args()\n    if args.action:\n        return run_headless_action(args.action)\n    # if args.help:\n    #     args.print_help()\n    #     return 0\n    App().mainloop()\n    return 0\nif __name__ == \"__main__\":",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "CONFIG_DIR",
+        "kind": 5,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "CONFIG_DIR = Path.home() / \".cp_relay_ui\"\nCONFIG_PATH = CONFIG_DIR / \"cp_power_gui_config.json\"\n@dataclass\nclass AppConfig:\n    relay_control_port: str = \"COM5\"\n    baudrate: int = 9600\n    # Map physical relay channels (1-based, per LCUS manuals) to functions\n    power_relay_channel: int = 1\n    usb_relay_channel: int = 2\n    # If wired via NC instead of NO, logical meaning may invert",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "CONFIG_PATH",
+        "kind": 5,
+        "importPath": "relay",
+        "description": "relay",
+        "peekOfCode": "CONFIG_PATH = CONFIG_DIR / \"cp_power_gui_config.json\"\n@dataclass\nclass AppConfig:\n    relay_control_port: str = \"COM5\"\n    baudrate: int = 9600\n    # Map physical relay channels (1-based, per LCUS manuals) to functions\n    power_relay_channel: int = 1\n    usb_relay_channel: int = 2\n    # If wired via NC instead of NO, logical meaning may invert\n    invert_power: bool = False",
+        "detail": "relay",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "\tname = 'lcus-usb-relay-module-controller',\n\tversion = '0.0.2',\n\tauthor = 'Pebble94464',\n\tauthor_email = 'jsn-usb2serial@pebble.plus.com',\n\tlicense = 'MIT License',\n\turl='https://github.com/Pebble94464/lcus-usb-relay-module-controller',\n\tdescription=('A module for controlling a USB to serial relay board'),\n\tlong_description=open('README.md').read(),\n\tlong_description_content_type=\"text/markdown\",\n\tkeywords = ('usb-relay lcus-1 lcus-2 lcus-4 lcus-8 '),",
+        "detail": "setup",
+        "documentation": {}
+    },
+    {
+        "label": "\tversion",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "\tversion = '0.0.2',\n\tauthor = 'Pebble94464',\n\tauthor_email = 'jsn-usb2serial@pebble.plus.com',\n\tlicense = 'MIT License',\n\turl='https://github.com/Pebble94464/lcus-usb-relay-module-controller',\n\tdescription=('A module for controlling a USB to serial relay board'),\n\tlong_description=open('README.md').read(),\n\tlong_description_content_type=\"text/markdown\",\n\tkeywords = ('usb-relay lcus-1 lcus-2 lcus-4 lcus-8 '),\n\tclassifiers = [",
+        "detail": "setup",
+        "documentation": {}
+    },
+    {
+        "label": "\tauthor",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "\tauthor = 'Pebble94464',\n\tauthor_email = 'jsn-usb2serial@pebble.plus.com',\n\tlicense = 'MIT License',\n\turl='https://github.com/Pebble94464/lcus-usb-relay-module-controller',\n\tdescription=('A module for controlling a USB to serial relay board'),\n\tlong_description=open('README.md').read(),\n\tlong_description_content_type=\"text/markdown\",\n\tkeywords = ('usb-relay lcus-1 lcus-2 lcus-4 lcus-8 '),\n\tclassifiers = [\n\t\t'Development Status :: 4 - Beta',",
+        "detail": "setup",
+        "documentation": {}
+    },
+    {
+        "label": "\tauthor_email",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "\tauthor_email = 'jsn-usb2serial@pebble.plus.com',\n\tlicense = 'MIT License',\n\turl='https://github.com/Pebble94464/lcus-usb-relay-module-controller',\n\tdescription=('A module for controlling a USB to serial relay board'),\n\tlong_description=open('README.md').read(),\n\tlong_description_content_type=\"text/markdown\",\n\tkeywords = ('usb-relay lcus-1 lcus-2 lcus-4 lcus-8 '),\n\tclassifiers = [\n\t\t'Development Status :: 4 - Beta',\n\t\t'Intended Audience :: Developers',",
+        "detail": "setup",
+        "documentation": {}
+    },
+    {
+        "label": "\tlicense",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "\tlicense = 'MIT License',\n\turl='https://github.com/Pebble94464/lcus-usb-relay-module-controller',\n\tdescription=('A module for controlling a USB to serial relay board'),\n\tlong_description=open('README.md').read(),\n\tlong_description_content_type=\"text/markdown\",\n\tkeywords = ('usb-relay lcus-1 lcus-2 lcus-4 lcus-8 '),\n\tclassifiers = [\n\t\t'Development Status :: 4 - Beta',\n\t\t'Intended Audience :: Developers',\n\t\t'License :: OSI Approved :: MIT License',",
+        "detail": "setup",
+        "documentation": {}
+    },
+    {
+        "label": "\tkeywords",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "\tkeywords = ('usb-relay lcus-1 lcus-2 lcus-4 lcus-8 '),\n\tclassifiers = [\n\t\t'Development Status :: 4 - Beta',\n\t\t'Intended Audience :: Developers',\n\t\t'License :: OSI Approved :: MIT License',\n\t\t'Programming Language :: Python',\n\t\t'Programming Language :: Python :: 3',\n\t\t'Topic :: System :: Hardware :: Universal Serial Bus (USB)',\n\t\t],\n\tpackages=['lcus_usb_relay_module_controller'],",
+        "detail": "setup",
+        "documentation": {}
+    },
+    {
+        "label": "\tclassifiers",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "\tclassifiers = [\n\t\t'Development Status :: 4 - Beta',\n\t\t'Intended Audience :: Developers',\n\t\t'License :: OSI Approved :: MIT License',\n\t\t'Programming Language :: Python',\n\t\t'Programming Language :: Python :: 3',\n\t\t'Topic :: System :: Hardware :: Universal Serial Bus (USB)',\n\t\t],\n\tpackages=['lcus_usb_relay_module_controller'],\n\tinstall_requires=['pyserial>2']",
+        "detail": "setup",
+        "documentation": {}
+    }
+]
